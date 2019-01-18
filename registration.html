@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+input[type="reset"]
+input[type="cancelbtn"]
+</style>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="cookiemngr.js"></script>
+<script type="text/javascript">
+function registration ()
+{
+	var email=document.getElementById("email");
+	var psw=document.getElementById("psw");
+	var psw-repeat=document.getElementById("psw-repeat");
+	var remember=document.getElementById("remember");
+	var value=email.value+":"+psw.value+":"+psw-repeat.value;
+	setCookie("Login",value,1);
+	alert(document.cookie);
+
+}
+</script>
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<!-- <h1><a href="#">UM LANDSCAPING SERVICES</a></h1> -->
+			<img src = "images/image3.jpg">
+<center>
+	<h1>Welcome to UM Lanscaping Services</h1>
+</center>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.html" accesskey="1" title="">Homepage</a></li>
+				<li><a href="aboutus.html" accesskey="2" title="">About us</a></li>
+				<li><a href="products.html" accesskey="3" title="">Services</a></li>
+				<li><a href="contactus.html" accesskey="4" title="">Contact</a></li>
+				<li><a href="cart.html" accesskey="5" title="">Bag</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="wrapper">
+	<div id="welcome" class="container">
+		<div class="title">
+			<h2>Sing up today!</h2>
+		</div>
+		<form action="index.html" style="border:1px solid #ccc"> <center><br>
+  <div class="container">
+    <h3>Please fill in this form to create an account.</h3>
+    <input type="text" placeholder="Enter Email" id="email" required><br>
+
+    <input type="password" placeholder="Enter Password" id="psw" required><br>
+
+    <input type="password" placeholder="Repeat Password" id="psw-repeat" required><br>
+    <label><center>
+      <input type="checkbox" checked="checked" id="remember"> Remember me
+    </label>
+   <!--------- </center><center>
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p><br> ------ -->
+    <div>
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn" onclick="registration();location.href='login.html;">Submit</button>
+      <input type="reset" value="Clear" 	 />
+  </center>
+  </center>
+    </div>
+</form>
+	
+</div>
+<div id="footer">
+	<div class="container">
+		<div class="fbox1">
+		<span class="icon icon-map-marker"></span>
+			<span>1061 San Pablo Ave
+			<br />Berkeley CA</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-phone"></span>
+			<span>
+				Telephone: +1 510 837 2303
+			</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-envelope"></span>
+			<span>ubaldino2011@hotmail.com </span>
+		</div>
+	</div>
+</div>
+	<ul class="contact">
+		<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+		<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+		<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+		<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+		<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+	</ul>
+</div>
+</body>
+</html>

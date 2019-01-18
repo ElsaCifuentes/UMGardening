@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cart</title>
+<style>
+td{text-align:right;border:solid 1px #CCCCCC;}
+</style>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<script language="javascript" src="cookiemngr.js" ></script>
+<script language="javascript" src="pricing.js"></script>
+<script type="text/javascript">
+var total=0;
+function getselected(id)
+{
+		var sel1=document.getElementById(id);
+		var index=sel1.selectedIndex;
+		var text=sel1.options[index].text;
+		var shipvalue=sel1.options[index].value;
+		//alert(id +':'+index+':'+ text+":"+text2);
+		var x=document.getElementById('ttotal');
+		x.innerHTML=parseInt(shipvalue)+(total+total*.085);
+}
+function cart2()
+{
+	total=0;
+	for(var i=0;i<items.length;i++)
+	{
+		qty=parseInt(getCookie(items[i]));
+		//alert(parseInt(qty));
+		if(!isNaN(qty))
+		{   
+			var itemqtyname=items[i]+"qty";
+			var cost=prices[i];
+			subtotal=prices[i]*qty;
+			total=total+subtotal;
+			document.writeln("<tr><td>",items[i],"</td><td>");
+			document.writeln(qty);
+			document.writeln("</td><td>");
+			document.writeln(cost);
+			document.writeln("</td><td>");
+			document.writeln(subtotal);
+			document.writeln("</td></tr>");
+		}
+   }
+   if(total !=0 ) 
+   {   
+	document.writeln("<tr><td colspan='3' >SUBTOTAL</td><td>");
+	document.writeln(total);
+	document.writeln("</td></tr>"); 
+	document.writeln("<tr><td colspan='3' >TAX AMOUNT(8.5%)</td><td>");
+	document.writeln((total*.085));
+	document.writeln("</td></tr>");
+	document.writeln("<tr><td colspan='3' >TOTAL</td><td>");
+	document.writeln((total +total*.085));
+	document.writeln("</td></tr>"); 
+   } 
+}
+ 
+</script>
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<!-- <h1><a href="#">UM LANDSCAPING SERVICES</a></h1> -->
+			<img src = "images/image3.jpg">
+<center>
+	<h1>Welcome to UM Lanscaping Services</h1>
+</center>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.html" accesskey="1" title="">Homepage</a></li>
+				<li><a href="aboutus.html" accesskey="2" title="">About us</a></li>
+				<li><a href="products.html" accesskey="3" title="">Services</a></li>
+				<li><a href="contactus.html" accesskey="4" title="">Contact</a></li>
+			   <li class="active"><a href="cart.html" accesskey="5" title="">Bag</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="wrapper">
+	<div id="welcome" class="container">
+		<div class="title">
+			<h2> Check out</h2>
+		</div>
+		<center>
+		<table>
+<tr><td>NAME</td><td>QTY</td><td>COST</td><td>SUBTOTAL</td></tr>
+<script type="text/javascript">
+cart2();
+</script>
+<tr><td colspan='3'>Cost with Shipping:
+	<select NAME='ship' id='ship' onchange="getselected('ship');">
+		<OPTION VALUE='' selected ></option>
+			<OPTION VALUE='0'>Standard-$0</option>
+			<OPTION VALUE='5'>Express-$5</option>
+			<OPTION VALUE='10'>Overnight-$10</option>
+		</select>
+		<td><div id='ttotal'></div></td>
+		</tr>
+</center>
+</table>
+	
+</div>
+<a href="products.html"style="float: right;">Back to Shopping</a>&nbsp;<a href="checkout2.html"style="float: right;">Checkout</a>
+<div id="footer">
+	<div class="container">
+		<div class="fbox1">
+		<span class="icon icon-map-marker"></span>
+			<span>1061 San Pablo Ave
+			<br />Berkeley CA</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-phone"></span>
+			<span>
+				Telephone: +1 510 837 2303
+			</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-envelope"></span>
+			<span>ubaldino2011@hotmail.com </span>
+		</div>
+	</div>
+</div>
+	<ul class="contact">
+		<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+		<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+		<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+		<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+		<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+	</ul>
+</div>
+</body>
+</html>
